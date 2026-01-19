@@ -6,16 +6,17 @@ import java.awt.*;
 import coursewise.util.*;
 import java.awt.event.*;
 
-public class MainMenu extends JFrame implements ActionListener{
+public class AdminLogin extends JFrame implements ActionListener{
     JPanel panel;
     ImageIcon icon;
-    JLabel imgLabel, studentId, password, or;
-    JTextField studentIdField;
+    JLabel imgLabel, username, password, or;
+    JTextField usernameField;
     JPasswordField passwordField;
-    JButton loginButton, adminLoginButton;
+    JButton loginButton, studentLoginButton;
 
-    public MainMenu(){
-        super("Course Wise - University Course Registration & Result System");
+
+    public AdminLogin(){
+        super("Admin Login | Course Wise - University Course Registration & Result System");
         setSize(800,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -28,15 +29,15 @@ public class MainMenu extends JFrame implements ActionListener{
         imgLabel.setBounds(300, 10, 200, 60);
         panel.add(imgLabel);
 
-        studentId = new JLabel("Student ID");
-        studentId.setBounds(250, 100, 100, 30);
-        studentId.setFont(new Font("Arial", Font.PLAIN, 16));
-        panel.add(studentId);
+        username = new JLabel("Username");
+        username.setBounds(250, 100, 100, 30);
+        username.setFont(new Font("Arial", Font.PLAIN, 16));
+        panel.add(username);
 
-        studentIdField = new JTextField();
-        studentIdField.setBounds(250, 132, 300, 30);
-        studentIdField.setFont(new Font("Arial", Font.PLAIN, 16));
-        panel.add(studentIdField);
+        usernameField = new JTextField();
+        usernameField.setBounds(250, 132, 300, 30);
+        usernameField.setFont(new Font("Arial", Font.PLAIN, 16));
+        panel.add(usernameField);
 
         password = new JLabel("Password");
         password.setBounds(250, 170, 100, 30);
@@ -62,22 +63,22 @@ public class MainMenu extends JFrame implements ActionListener{
         or.setFont(new Font("Arial", Font.PLAIN, 16));
         panel.add(or);
 
-        adminLoginButton = new JButton("Login as Admin");
-        adminLoginButton.setBounds(325, 320, 150, 30);
-        adminLoginButton.setFont(Constant.MAIN_FONT);
-        adminLoginButton.setBackground(Constant.SECONDARY_COLOR);
-        adminLoginButton.setForeground(Color.WHITE);
-        adminLoginButton.setFocusPainted(false);
-        adminLoginButton.addActionListener(this);
-        panel.add(adminLoginButton);
+        studentLoginButton = new JButton("Login as Student");
+        studentLoginButton.setBounds(312, 320, 175, 30);
+        studentLoginButton.setFont(Constant.MAIN_FONT);
+        studentLoginButton.setBackground(Constant.SECONDARY_COLOR);
+        studentLoginButton.setForeground(Color.WHITE);
+        studentLoginButton.setFocusPainted(false);
+        studentLoginButton.addActionListener(this);
+        panel.add(studentLoginButton);
 
         this.add(panel);
     }
 
     public void actionPerformed(ActionEvent ae){
-        if(ae.getSource() == adminLoginButton){
-            AdminLogin adminLogin = new AdminLogin();
-            adminLogin.setVisible(true);
+        if(ae.getSource() == studentLoginButton){
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.setVisible(true);
             this.dispose();
         }
     }
