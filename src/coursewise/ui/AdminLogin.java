@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import java.awt.*;
 import coursewise.util.*;
+import coursewise.service.AdminService;
 import java.awt.event.*;
 
 public class AdminLogin extends JFrame implements ActionListener{
@@ -59,7 +60,7 @@ public class AdminLogin extends JFrame implements ActionListener{
         panel.add(loginButton);
 
         or = new JLabel("OR,");
-        or.setBounds(380, 290, 30, 30);
+        or.setBounds(385, 290, 30, 30);
         or.setFont(new Font("Arial", Font.PLAIN, 16));
         panel.add(or);
 
@@ -76,7 +77,27 @@ public class AdminLogin extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent ae){
-        if(ae.getSource() == studentLoginButton){
+        if(ae.getSource() == loginButton){
+            String user = usernameField.getText();
+            String pass = new String(passwordField.getPassword());
+            
+            if(user.isEmpty() || pass.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Please enter both Username and Password", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            AdminService service = new AdminService();
+            if(service.authenticateAdmin(user, pass)) {
+                JOptionPane.showMessageDialog(this, "Admin login successful!", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid Username or Password", 
+                    "Login Failed", JOptionPane.ERROR_MESSAGE);
+                passwordField.setText("");
+            }
+        }
+        else if(ae.getSource() == studentLoginButton){
             MainMenu mainMenu = new MainMenu();
             mainMenu.setVisible(true);
             this.dispose();

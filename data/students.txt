@@ -1,0 +1,4 @@
+S001|John Doe|john@university.edu|password123|9876543210|4|3.85|CS101,MATH101,ENG101
+S002|Jane Smith|jane@university.edu|pass456|9876543211|4|3.92|CS101,CS201,MATH101
+S003|Michael Johnson|michael@university.edu|secure789|9876543212|2|3.65|CS101,MATH101
+S004|Emily Brown|emily@university.edu|emily123|9876543213|3|3.78|CS101,CS201,CS301
