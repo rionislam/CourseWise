@@ -1,9 +1,10 @@
 package coursewise;
 
-import java.lang.*;
+import coursewise.ui.MainMenu;
 
 public class CourseWiseApp {
     public static void main(String[] args) {
-        
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.setVisible(true);
     }
 }
