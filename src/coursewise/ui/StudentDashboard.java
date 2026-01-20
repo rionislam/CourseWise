@@ -13,7 +13,7 @@ import coursewise.util.Constant;
 public class StudentDashboard extends JFrame implements ActionListener {
     JPanel panel, menuPanel;
     ImageIcon icon, avater;
-    JLabel imgLabel, avaterLabel, nameLabel, emailLabel, phoneLabel, creditsLabel, cgpaLabel;
+    JLabel imgLabel, avaterLabel, nameLabel, emailLabel, phoneLabel, creditsLabel, cgpaLabel, enrolledCoursesLabel;
     JButton menuButton, profileButton, registrationButton, resultsButton, logoutButton, editAvatarButton, editDetailsButton;
     JMenuBar menuBar;
     Student currentStudent;
@@ -124,6 +124,11 @@ public class StudentDashboard extends JFrame implements ActionListener {
         cgpaLabel.setFont(Constant.MAIN_FONT);
         cgpaLabel.setBounds(300, 260, 400, 30);
         panel.add(cgpaLabel);
+
+        enrolledCoursesLabel = new JLabel("Enrolled Courses: " + currentStudent.getEnrolledCourses());
+        enrolledCoursesLabel.setFont(Constant.MAIN_FONT);
+        enrolledCoursesLabel.setBounds(300, 300, 450, 30);
+        panel.add(enrolledCoursesLabel);
 
         this.add(panel);
     }

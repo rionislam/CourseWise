@@ -8,8 +8,8 @@ public class Student {
     private String phone;
     private int creditsCompleted;
     private double cgpa;
-    private String enrolledCourses; // Comma-separated course IDs
-    private String avatarFilename; // Avatar image filename
+    private String enrolledCourses;
+    private String avatarFilename;
 
     public Student() {
     }
