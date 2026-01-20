@@ -22,13 +22,13 @@ public class AddStudent extends JFrame implements ActionListener {
         panel = new JPanel();
         panel.setLayout(null);
 
-        /* ===== TITLE ===== */
+        
         JLabel title = new JLabel("Add New Student");
         title.setFont(new Font("Arial", Font.BOLD, 22));
         title.setBounds(200, 20, 250, 30);
         panel.add(title);
 
-        /* ===== STUDENT NAME ===== */
+        
         nameLabel = new JLabel("Student Name:");
         nameLabel.setBounds(100, 80, 120, 25);
         panel.add(nameLabel);
@@ -37,7 +37,7 @@ public class AddStudent extends JFrame implements ActionListener {
         nameField.setBounds(250, 80, 200, 25);
         panel.add(nameField);
 
-        /* ===== STUDENT ID ===== */
+        
         idLabel = new JLabel("Student ID:");
         idLabel.setBounds(100, 130, 120, 25);
         panel.add(idLabel);
@@ -46,7 +46,7 @@ public class AddStudent extends JFrame implements ActionListener {
         idField.setBounds(250, 130, 200, 25);
         panel.add(idField);
 
-        /* ===== EMAIL ===== */
+       
         emailLabel = new JLabel("Email:");
         emailLabel.setBounds(100, 180, 120, 25);
         panel.add(emailLabel);
@@ -55,7 +55,7 @@ public class AddStudent extends JFrame implements ActionListener {
         emailField.setBounds(250, 180, 200, 25);
         panel.add(emailField);
 
-        /* ===== MOBILE ===== */
+
         mobileLabel = new JLabel("Mobile:");
         mobileLabel.setBounds(100, 230, 120, 25);
         panel.add(mobileLabel);
@@ -64,7 +64,7 @@ public class AddStudent extends JFrame implements ActionListener {
         mobileField.setBounds(250, 230, 200, 25);
         panel.add(mobileField);
 
-        /* ===== PASSWORD ===== */
+       
         passwordLabel = new JLabel("Password:");
         passwordLabel.setBounds(100, 280, 120, 25);
         panel.add(passwordLabel);
@@ -73,7 +73,7 @@ public class AddStudent extends JFrame implements ActionListener {
         passwordField.setBounds(250, 280, 200, 25);
         panel.add(passwordField);
 
-        /* ===== CONFIRM BUTTON ===== */
+        
         confirmButton = new JButton("Confirm");
         confirmButton.setBounds(250, 350, 100, 35);
         confirmButton.setBackground(Constant.PRIMARY_COLOR);
@@ -82,7 +82,7 @@ public class AddStudent extends JFrame implements ActionListener {
         confirmButton.addActionListener(this);
         panel.add(confirmButton);
 
-        /* ===== BACK BUTTON ===== */
+        
         backButton = new JButton("Back");
         backButton.setBounds(100, 350, 100, 35);
         backButton.setBackground(Constant.SECONDARY_COLOR);
@@ -97,13 +97,13 @@ public class AddStudent extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == backButton) {
-            // Back to AdminDashboard
+            
             AdminDashboard dashboard = new AdminDashboard();
             dashboard.setVisible(true);
             this.dispose();
         } 
         else if (ae.getSource() == confirmButton) {
-            // For now, just show popup
+           
             JOptionPane.showMessageDialog(
                     this,
                     "Student added successfully!",
@@ -111,7 +111,7 @@ public class AddStudent extends JFrame implements ActionListener {
                     JOptionPane.INFORMATION_MESSAGE
             );
 
-            // Clear fields after adding
+            
             nameField.setText("");
             idField.setText("");
             emailField.setText("");

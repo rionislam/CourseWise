@@ -36,13 +36,13 @@ public class CourseRegistration extends JFrame implements ActionListener {
         panel = new JPanel();
         panel.setLayout(null);
 
-        // Logo
+        
         icon = new ImageIcon(Constant.ASSET + "logo.png");
         JLabel imgLabel = new JLabel(icon);
         imgLabel.setBounds(10, 10, 200, 60);
         panel.add(imgLabel);
 
-        // Menu Button
+        
         menuButton = new JButton("≡ Menu");
         menuButton.setBounds(650, 20, 100, 40);
         menuButton.setFont(Constant.MAIN_FONT);
@@ -92,7 +92,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
 
         panel.add(menuPanel);
 
-        // Enrolled Courses Section
+        
         JLabel enrolledTitle = new JLabel("Already Enrolled Courses:");
         enrolledTitle.setBounds(10, 80, 300, 25);
         enrolledTitle.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -105,7 +105,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
         enrolledScroll.setBounds(10, 110, 780, 70);
         panel.add(enrolledScroll);
 
-        // Search Section
+       
         JLabel searchLabel = new JLabel("Search & Register Courses:");
         searchLabel.setBounds(10, 190, 300, 25);
         searchLabel.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -121,14 +121,14 @@ public class CourseRegistration extends JFrame implements ActionListener {
         searchPanel.setBounds(10, 215, 780, 40);
         panel.add(searchPanel);
 
-        // Available Courses Panel
+        
         courseContainerPanel = new JPanel();
         courseContainerPanel.setLayout(new BoxLayout(courseContainerPanel, BoxLayout.Y_AXIS));
         JScrollPane courseScroll = new JScrollPane(courseContainerPanel);
         courseScroll.setBounds(10, 260, 780, 170);
         panel.add(courseScroll);
 
-        // Register Button
+     
         registerBtn = new JButton("Register Selected");
         registerBtn.setBounds(10, 435, 200, 35);
         registerBtn.setFont(Constant.MAIN_FONT);
@@ -140,7 +140,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
 
         this.add(panel);
 
-        // Load enrolled and available courses
+       
         loadEnrolledCourses();
         loadCourses(courseContainerPanel, "");
     }
@@ -156,7 +156,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
             for (String code : enrolled) {
                 code = code.trim();
                 if (!code.isEmpty()) {
-                    // Create a panel for each course with close button
+                    
                     JPanel coursePanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
                     coursePanel.setBackground(Constant.PRIMARY_COLOR);
                     coursePanel.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 5));
@@ -210,7 +210,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
     private void loadCourses(JPanel container, String q) {
         Course[] results = courseService.search(q);
         
-        // Filter out already enrolled courses
+        
         String enrolledCoursesStr = student.getEnrolledCourses();
         String[] enrolledCodes = new String[0];
         if (enrolledCoursesStr != null && !enrolledCoursesStr.isEmpty()) {
@@ -220,7 +220,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
             }
         }
         
-        // Filter results to exclude enrolled courses
+   
         Course[] filteredResults = new Course[results.length];
         int filteredCount = 0;
         for (int i = 0; i < results.length; i++) {
@@ -237,7 +237,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
             }
         }
         
-        // Create final course array
+      
         Course[] finalCourses = new Course[filteredCount];
         System.arraycopy(filteredResults, 0, finalCourses, 0, filteredCount);
         
@@ -278,7 +278,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
             }
         }
         
-        // Update student's enrolledCourses in students.txt
+        
         if (success > 0) {
             String currentCourses = student.getEnrolledCourses();
             String updatedCourses = currentCourses;
@@ -297,7 +297,7 @@ public class CourseRegistration extends JFrame implements ActionListener {
         
         JOptionPane.showMessageDialog(this, "Registered " + success + " course(s).", "Done", JOptionPane.INFORMATION_MESSAGE);
         loadEnrolledCourses();
-        // Clear search and reload courses
+        
         searchField.setText("");
         loadCourses(courseContainerPanel, "");
     }

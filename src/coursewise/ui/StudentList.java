@@ -18,16 +18,16 @@ public class StudentList extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // ===== Title =====
+     
         JLabel title = new JLabel("All Students", SwingConstants.CENTER);
         title.setFont(new Font("Arial", Font.BOLD, 22));
         add(title, BorderLayout.NORTH);
 
-        // ===== Table =====
+       
         String[] columns = {"Name", "ID", "Mobile", "Email"};
         model = new DefaultTableModel(columns, 0);
 
-        // Sample blank row (user data will be added later)
+        
         model.addRow(new Object[]{"", "", "", ""});
 
         table = new JTable(model);
@@ -35,7 +35,7 @@ public class StudentList extends JFrame implements ActionListener {
 
         add(new JScrollPane(table), BorderLayout.CENTER);
 
-        // ===== Back Button =====
+      
         backButton = new JButton("Back");
         backButton.setBackground(new Color(52, 152, 219));
         backButton.setForeground(Color.WHITE);
@@ -56,8 +56,8 @@ public class StudentList extends JFrame implements ActionListener {
         }
     }
 
-    // ===== Main Method to Test =====
-    public static void main(String[] args) {
-        new StudentList().setVisible(true);
-    }
+ 
+    //public static void main(String[] args) {
+      //  new StudentList().setVisible(true);
+   // }
 }

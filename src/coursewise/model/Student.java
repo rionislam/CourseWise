@@ -40,7 +40,7 @@ public class Student {
         this.avatarFilename = avatarFilename;
     }
 
-    // Getters and Setters
+    
     public String getStudentId() {
         return studentId;
     }
