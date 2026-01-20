@@ -130,9 +130,22 @@ public class StudentService {
                     parts[2],
                     parts[3],
                     parts[4],
-                    parts[5],
+                    Integer.parseInt(parts[5]),
                     Double.parseDouble(parts[6]),
-                    parts[7]
+                    parts[7],
+                    "default-avatar.jpg"
+                );
+            } else if (parts.length == 9) {
+                return new Student(
+                    parts[0],
+                    parts[1],
+                    parts[2],
+                    parts[3],
+                    parts[4],
+                    Integer.parseInt(parts[5]),
+                    Double.parseDouble(parts[6]),
+                    parts[7],
+                    parts[8]
                 );
             }
         } catch (Exception e) {

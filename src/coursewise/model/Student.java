@@ -6,23 +6,38 @@ public class Student {
     private String email;
     private String password;
     private String phone;
-    private String semester;
+    private int creditsCompleted;
     private double cgpa;
     private String enrolledCourses; // Comma-separated course IDs
+    private String avatarFilename; // Avatar image filename
 
     public Student() {
     }
 
     public Student(String studentId, String name, String email, String password, 
-                   String phone, String semester, double cgpa, String enrolledCourses) {
+                   String phone, int creditsCompleted, double cgpa, String enrolledCourses) {
         this.studentId = studentId;
         this.name = name;
         this.email = email;
         this.password = password;
         this.phone = phone;
-        this.semester = semester;
+        this.creditsCompleted = creditsCompleted;
         this.cgpa = cgpa;
         this.enrolledCourses = enrolledCourses;
+        this.avatarFilename = "default-avatar.jpg";
+    }
+
+    public Student(String studentId, String name, String email, String password, 
+                   String phone, int creditsCompleted, double cgpa, String enrolledCourses, String avatarFilename) {
+        this.studentId = studentId;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.creditsCompleted = creditsCompleted;
+        this.cgpa = cgpa;
+        this.enrolledCourses = enrolledCourses;
+        this.avatarFilename = avatarFilename;
     }
 
     // Getters and Setters
@@ -66,12 +81,12 @@ public class Student {
         this.phone = phone;
     }
 
-    public String getSemester() {
-        return semester;
+    public int getCreditsCompleted() {
+        return creditsCompleted;
     }
 
-    public void setSemester(String semester) {
-        this.semester = semester;
+    public void setCreditsCompleted(int creditsCompleted) {
+        this.creditsCompleted = creditsCompleted;
     }
 
     public double getCgpa() {
@@ -90,9 +105,17 @@ public class Student {
         this.enrolledCourses = enrolledCourses;
     }
 
+    public String getAvatarFilename() {
+        return avatarFilename;
+    }
+
+    public void setAvatarFilename(String avatarFilename) {
+        this.avatarFilename = avatarFilename;
+    }
+
     @Override
     public String toString() {
-        return studentId + "|" + name + "|" + email + "|" + password + "|" + 
-               phone + "|" + semester + "|" + cgpa + "|" + enrolledCourses;
+         return studentId + "|" + name + "|" + email + "|" + password + "|" + 
+             phone + "|" + creditsCompleted + "|" + cgpa + "|" + enrolledCourses + "|" + avatarFilename;
     }
 }
