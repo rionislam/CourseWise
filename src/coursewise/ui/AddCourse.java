@@ -22,14 +22,34 @@ public class AddCourse extends JFrame implements ActionListener {
         mainPanel.setLayout(null);
         add(mainPanel);
 
-        /* ===== 3 DOT MENU ===== */
+        
         menuButton = new JButton("⋮");
         menuButton.setBounds(440, 10, 40, 30);
         menuButton.setFont(new Font("Arial", Font.BOLD, 20));
         menuButton.setFocusPainted(false);
         mainPanel.add(menuButton);
+		
+		
+        //menuButton = new JButton("≡ Menu");
+        //menuButton.setBounds(650, 20, 100, 40);
+        //menuButton.setFont(Constant.MAIN_FONT);
+        //menuButton.setBackground(Constant.PRIMARY_COLOR);
+        //menuButton.setForeground(Color.WHITE);
+        //menuButton.setFocusPainted(false);
+        //menuButton.addActionListener(this);
+        //panel.add(menuButton);
 
-        /* ===== BACK BUTTON ===== */
+        
+        //menuPanel = new JPanel();
+        //menuPanel.setLayout(new GridLayout(2, 1, 10, 10));
+        //menuPanel.setBackground(Constant.SECONDARY_COLOR);
+        //menuPanel.setBounds(500, 60, 250, 150);
+        //menuPanel.setVisible(false);
+		
+		
+		
+
+        
         backButton = new JButton("Back");
         backButton.setBounds(20, 10, 80, 30);
         backButton.addActionListener(this);
@@ -38,7 +58,7 @@ public class AddCourse extends JFrame implements ActionListener {
         int y = 60;
         int labelWidth = 120, fieldWidth = 250, height = 30, gap = 10;
 
-        /* ===== COURSE CODE ===== */
+        
         JLabel courseCodeLabel = new JLabel("Course Code:");
         courseCodeLabel.setBounds(30, y, labelWidth, height);
         mainPanel.add(courseCodeLabel);
@@ -49,7 +69,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + gap;
 
-        /* ===== COURSE NAME ===== */
+        
         JLabel courseNameLabel = new JLabel("Course Name:");
         courseNameLabel.setBounds(30, y, labelWidth, height);
         mainPanel.add(courseNameLabel);
@@ -60,7 +80,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + gap;
 
-        /* ===== DAY1 ===== */
+        
         JLabel day1Label = new JLabel("Day1:");
         day1Label.setBounds(30, y, labelWidth, height);
         mainPanel.add(day1Label);
@@ -71,7 +91,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + gap;
 
-        /* ===== DAY1 START ===== */
+        
         JLabel day1StartLabel = new JLabel("Day1 Start:");
         day1StartLabel.setBounds(30, y, labelWidth, height);
         mainPanel.add(day1StartLabel);
@@ -82,7 +102,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + gap;
 
-        /* ===== DAY1 END ===== */
+        
         JLabel day1EndLabel = new JLabel("Day1 End:");
         day1EndLabel.setBounds(30, y, labelWidth, height);
         mainPanel.add(day1EndLabel);
@@ -93,7 +113,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + gap;
 
-        /* ===== DAY2 ===== */
+        
         JLabel day2Label = new JLabel("Day2:");
         day2Label.setBounds(30, y, labelWidth, height);
         mainPanel.add(day2Label);
@@ -104,7 +124,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + gap;
 
-        /* ===== DAY2 START ===== */
+       
         JLabel day2StartLabel = new JLabel("Day2 Start:");
         day2StartLabel.setBounds(30, y, labelWidth, height);
         mainPanel.add(day2StartLabel);
@@ -115,7 +135,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + gap;
 
-        /* ===== DAY2 END ===== */
+        
         JLabel day2EndLabel = new JLabel("Day2 End:");
         day2EndLabel.setBounds(30, y, labelWidth, height);
         mainPanel.add(day2EndLabel);
@@ -126,7 +146,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + gap;
 
-        /* ===== ROOM NUMBER ===== */
+        
         JLabel roomLabel = new JLabel("Room No:");
         roomLabel.setBounds(30, y, labelWidth, height);
         mainPanel.add(roomLabel);
@@ -137,7 +157,7 @@ public class AddCourse extends JFrame implements ActionListener {
 
         y += height + 2 * gap;
 
-        /* ===== CREATE BUTTON ===== */
+        
         createButton = new JButton("Create");
         createButton.setBounds(180, y, 120, 35);
         createButton.setBackground(new Color(52, 152, 219));
@@ -155,5 +175,5 @@ public class AddCourse extends JFrame implements ActionListener {
         }
     }
 
-    /* ===== NO MAIN() METHOD NEEDED ===== */
+    
 }

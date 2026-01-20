@@ -35,7 +35,7 @@ public class Courses extends JFrame implements ActionListener {
         /* ===== ADD COURSE BUTTON ===== */
         addCourseButton = new JButton("Add Course");
         addCourseButton.setBounds(850, 20, 120, 30);
-        addCourseButton.addActionListener(this); // ✅ Add listener
+        addCourseButton.addActionListener(this);
         mainPanel.add(addCourseButton);
 
         /* ===== BACK BUTTON ===== */
@@ -46,6 +46,7 @@ public class Courses extends JFrame implements ActionListener {
 
         /* ===== TABLE HEADER ===== */
         int x = 10;
+
         JLabel codeHeader = new JLabel("Course Code");
         codeHeader.setBounds(x, 80, 100, 25);
         mainPanel.add(codeHeader);
@@ -95,23 +96,24 @@ public class Courses extends JFrame implements ActionListener {
         actionHeader.setBounds(x, 80, 80, 25);
         mainPanel.add(actionHeader);
 
-        /* ===== EMPTY AREA FOR COURSE LIST ===== */
+        /* ===== COURSE LIST AREA ===== */
         courseListArea = new JPanel();
         courseListArea.setBounds(10, 110, 960, 320);
         courseListArea.setBorder(new LineBorder(Color.LIGHT_GRAY));
-        courseListArea.setLayout(null); // for dynamic rows
+        courseListArea.setLayout(null);
         mainPanel.add(courseListArea);
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+
         if (ae.getSource() == backButton) {
             AdminDashboard dashboard = new AdminDashboard();
             dashboard.setVisible(true);
             this.dispose();
-        } 
+        }
         else if (ae.getSource() == addCourseButton) {
-            AddCourse addCoursePage = new AddCourse(); // ✅ Open AddCourse page
+            AddCourse addCoursePage = new AddCourse();
             addCoursePage.setVisible(true);
             this.dispose();
         }
