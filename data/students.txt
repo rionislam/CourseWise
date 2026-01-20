@@ -1,1 +1,1 @@
-S001|Rion Islam|rionislam6348@gmail.com|password123|01307011634|11|3.85|CS101,MATH101,ENG101|default-avatar.jpg
+S001|Rion Islam|rionislam6348@gmail.com|password123|01307011634|11|3.85|MATH101,ENG101,PHYS101|default-avatar.jpg

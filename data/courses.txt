@@ -1,0 +1,8 @@
+CS101|Introduction to Computer Science|Monday|09:00|10:30|Wednesday|09:00|10:30|A|40|32|Active|Fall 2024
+CS102|Data Structures|Tuesday|11:00|12:30|Thursday|11:00|12:30|B|40|38|Active|Fall 2024
+MATH101|Calculus I|Monday|14:00|15:30|Friday|14:00|15:30|A|50|45|Active|Fall 2024
+MATH102|Linear Algebra|Wednesday|10:00|11:30|Friday|10:00|11:30|C|50|48|Active|Fall 2024
+PHYS101|Physics I|Monday|11:00|12:30|Wednesday|11:00|12:30|A|45|42|Active|Fall 2024
+CS201|Object-Oriented Programming|Tuesday|14:00|15:30|Thursday|14:00|15:30|A|40|35|Active|Fall 2024
+CHEM101|General Chemistry|Monday|15:00|16:30|Wednesday|15:00|16:30|B|50|47|Active|Fall 2024
+BIO101|General Biology|Thursday|09:00|10:30|Friday|09:00|10:30|A|45|40|Active|Fall 2024

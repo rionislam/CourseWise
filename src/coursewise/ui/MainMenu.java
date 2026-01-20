@@ -91,8 +91,8 @@ public class MainMenu extends JFrame implements ActionListener{
             Student student = service.authenticateStudent(id, pass);
             
             if(student != null) {
-                StudentDashboard dashboard = new StudentDashboard(student);
-                dashboard.setVisible(true);
+                StudentProfile profile = new StudentProfile(student);
+                profile.setVisible(true);
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Invalid Student ID or Password", 

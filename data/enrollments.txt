@@ -1,0 +1,8 @@
+CS101|S001|Monday|09:00|10:30|Wednesday|09:00|10:30|A|Active|Fall 2024|-1.0
+CS102|S001|Tuesday|11:00|12:30|Thursday|11:00|12:30|B|Active|Fall 2024|-1.0
+MATH101|S001|Monday|14:00|15:30|Friday|14:00|15:30|A|Active|Fall 2024|-1.0
+MATH102|S001|Wednesday|10:00|11:30|Friday|10:00|11:30|C|Active|Fall 2024|-1.0
+CS102|S001|Tuesday|11:00|12:30|Thursday|11:00|12:30|B|Active|Fall 2024|-1.0
+CS101|S001|Monday|09:00|10:30|Wednesday|09:00|10:30|A|Active|Fall 2024|-1.0
+PHYS101|S001|Monday|11:00|12:30|Wednesday|11:00|12:30|A|Active|Fall 2024|-1.0
+CS102|S001|Tuesday|11:00|12:30|Thursday|11:00|12:30|B|Active|Fall 2024|-1.0

@@ -10,7 +10,7 @@ import coursewise.model.Student;
 import coursewise.service.StudentService;
 import coursewise.util.Constant;
 
-public class StudentDashboard extends JFrame implements ActionListener {
+public class StudentProfile extends JFrame implements ActionListener {
     JPanel panel, menuPanel;
     ImageIcon icon, avater;
     JLabel imgLabel, avaterLabel, nameLabel, emailLabel, phoneLabel, creditsLabel, cgpaLabel, enrolledCoursesLabel;
@@ -20,9 +20,9 @@ public class StudentDashboard extends JFrame implements ActionListener {
     boolean isMenuOpen = false;
 
 
-    public StudentDashboard(Student student) {
+    public StudentProfile(Student student) {
         currentStudent = student;
-        super("Student Dashboard | Course Wise - University Course Registration & Result System");
+        super("Student Profile | Course Wise - University Course Registration & Result System");
         this.setSize(800, 500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -46,10 +46,18 @@ public class StudentDashboard extends JFrame implements ActionListener {
 
 
         menuPanel = new JPanel();
-        menuPanel.setLayout(new GridLayout(3, 1, 10, 10));
+        menuPanel.setLayout(new GridLayout(4, 1, 10, 10));
         menuPanel.setBackground(Constant.SECONDARY_COLOR);
         menuPanel.setBounds(500, 60, 250, 200);
         menuPanel.setVisible(false);
+
+        profileButton = new JButton("Profile");
+        profileButton.setFont(Constant.MAIN_FONT);
+        profileButton.setBackground(Constant.PRIMARY_COLOR);
+        profileButton.setForeground(Color.WHITE);
+        profileButton.setFocusPainted(false);
+        profileButton.addActionListener(this);
+        menuPanel.add(profileButton);
 
         registrationButton = new JButton("Register Courses");
         registrationButton.setFont(Constant.MAIN_FONT);
@@ -141,6 +149,10 @@ public class StudentDashboard extends JFrame implements ActionListener {
             editAvatar();
         } else if (ae.getSource() == editDetailsButton) {
             editDetails();
+        } else if (ae.getSource() == registrationButton) {
+            CourseRegistration reg = new CourseRegistration(currentStudent);
+            reg.setVisible(true);
+            this.dispose();
         } else if (ae.getSource() == logoutButton) {
             MainMenu mainMenu = new MainMenu();
             mainMenu.setVisible(true);
