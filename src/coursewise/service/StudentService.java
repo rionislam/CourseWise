@@ -43,7 +43,7 @@ public class StudentService {
         return null;
     }
 
-    public Student[] getAllStudents() {
+    public int getStudentCount(){
         int count = 0;
         try (Scanner scanner = new Scanner(new File(Constant.STUDENT_FILE))) {
             while (scanner.hasNextLine()) {
@@ -55,8 +55,12 @@ public class StudentService {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        
-        Student[] students = new Student[count];
+
+        return count;
+    }
+
+    public Student[] getAllStudents() {
+        Student[] students = new Student[getStudentCount()];
         int index = 0;
         try (Scanner scanner = new Scanner(new File(Constant.STUDENT_FILE))) {
             while (scanner.hasNextLine()) {
