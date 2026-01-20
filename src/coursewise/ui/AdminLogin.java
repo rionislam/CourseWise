@@ -89,8 +89,11 @@ public class AdminLogin extends JFrame implements ActionListener{
             
             AdminService service = new AdminService();
             if(service.authenticateAdmin(user, pass)) {
-                JOptionPane.showMessageDialog(this, "Admin login successful!", 
+                JOptionPane.showMessageDialog(this,"Admin login successful!", 
                     "Success", JOptionPane.INFORMATION_MESSAGE);
+					AdminDashboard adminDashboard = new AdminDashboard ();
+					adminDashboard.setVisible(true);
+					this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Invalid Username or Password", 
                     "Login Failed", JOptionPane.ERROR_MESSAGE);
