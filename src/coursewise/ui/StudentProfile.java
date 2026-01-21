@@ -206,9 +206,15 @@ public class StudentProfile extends JFrame implements ActionListener {
         JTextField phoneField = new JTextField(currentStudent.getPhone());
 
         JPanel form = new JPanel(new GridLayout(3, 2, 8, 8));
-        form.add(new JLabel("Name:")); form.add(nameField);
-        form.add(new JLabel("Email:")); form.add(emailField);
-        form.add(new JLabel("Phone:")); form.add(phoneField);
+
+        form.add(new JLabel("Name:")); 
+        form.add(nameField);
+
+        form.add(new JLabel("Email:")); 
+        form.add(emailField);
+
+        form.add(new JLabel("Phone:")); 
+        form.add(phoneField);
 
         int option = JOptionPane.showConfirmDialog(this, form, "Edit Student Details", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (option == JOptionPane.OK_OPTION) {

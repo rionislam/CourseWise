@@ -47,7 +47,6 @@ public class Course {
     public String getStatus() { return status; }
     public String getSemester() { return semester; }
 
-    @Override
     public String toString() {
         return code + "-" + section + " | " + name + " | " + day1 + " " + start1 + "-" + end1 + (day2.isEmpty()?"":"; " + day2 + " " + start2 + "-" + end2) + " | Sem: " + semester;
     }

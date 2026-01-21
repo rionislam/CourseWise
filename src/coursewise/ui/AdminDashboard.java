@@ -4,10 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import coursewise.util.Constant;
+import coursewise.service.CourseService;
 import coursewise.service.StudentService;
 
-
-import coursewise.ui.AddStudent;
 
 public class AdminDashboard extends JFrame implements ActionListener {
 
@@ -18,11 +17,13 @@ public class AdminDashboard extends JFrame implements ActionListener {
     boolean isMenuOpen = false;
 
     StudentService studentService;
+    CourseService courseService;
 
     public AdminDashboard() {
         studentService = new StudentService();
+        courseService = new CourseService();
 
-        super("Admin Dashboard | Course Wise");
+        super("Admin Dashboard | Course Wise - University Course Registration & Result System");
         this.setSize(800, 500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -94,7 +95,7 @@ public class AdminDashboard extends JFrame implements ActionListener {
         courseLabel.setFont(new Font("Arial", Font.BOLD, 16));
         courseLabel.setForeground(Color.WHITE);
 
-        courseCountLabel = new JLabel("30", SwingConstants.CENTER);
+        courseCountLabel = new JLabel(""+courseService.getCourseCount(), SwingConstants.CENTER);
         courseCountLabel.setFont(new Font("Arial", Font.BOLD, 32));
         courseCountLabel.setForeground(Color.WHITE);
 
@@ -107,13 +108,13 @@ public class AdminDashboard extends JFrame implements ActionListener {
         studentBox.setBounds(450, 150, 200, 120);
         studentBox.setBackground(Constant.SECONDARY_COLOR);
 
-        studentLabel = new JLabel("Active Students", SwingConstants.CENTER);
+        studentLabel = new JLabel("Active Students",SwingConstants.CENTER);
         studentLabel.setFont(new Font("Arial", Font.BOLD, 16));
         studentLabel.setForeground(Color.WHITE);
 
         studentCountLabel = new JLabel(
-                " " + studentService.getStudentCount(),
-                SwingConstants.CENTER
+                "" + studentService.getStudentCount(), SwingConstants.CENTER
+        
         );
         studentCountLabel.setFont(new Font("Arial", Font.BOLD, 32));
         studentCountLabel.setForeground(Color.WHITE);
