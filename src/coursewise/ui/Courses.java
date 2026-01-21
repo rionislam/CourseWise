@@ -14,7 +14,8 @@ public class Courses extends JFrame implements ActionListener {
     JTextField searchField;
     JButton searchButton, addCourseButton, menuButton;
     JButton dashboardButton, coursesButton, resultsButton, addStudentButton, logoutButton;
-    JPanel courseListArea, menuPanel;
+    JPanel courseList, menuPanel;
+    JScrollPane courseListArea;
     ImageIcon icon;
     boolean isMenuOpen = false;
 
@@ -106,7 +107,7 @@ public class Courses extends JFrame implements ActionListener {
         addCourseButton.addActionListener(this);
         panel.add(addCourseButton);
 
-        int x = 10;
+        int x = 20;
 
         JLabel codeHeader = new JLabel("Course Code");
         codeHeader.setBounds(x, 140, 80, 25);
@@ -128,22 +129,73 @@ public class Courses extends JFrame implements ActionListener {
         panel.add(day2Header);
 
         x += 110;
-        JLabel roomHeader = new JLabel("Capacity");
-        roomHeader.setBounds(x, 140, 70, 25);
-        panel.add(roomHeader);
+        JLabel capacityHeader = new JLabel("Capacity");
+        capacityHeader.setBounds(x, 140, 70, 25);
+        panel.add(capacityHeader);
 
         x += 80;
-        JLabel actionHeader = new JLabel("Count");
-        actionHeader.setBounds(x, 140, 50, 25);
-        panel.add(actionHeader);
+        JLabel countHeader = new JLabel("Count");
+        countHeader.setBounds(x, 140, 50, 25);
+        panel.add(countHeader);
 
-        courseListArea = new JPanel();
-        courseListArea.setBounds(10, 140, 770, 350);
-        courseListArea.setBorder(new LineBorder(Color.LIGHT_GRAY));
-        courseListArea.setLayout(null);
+        courseList = new JPanel();
+        courseList.setLayout(null);
+
+        courseListArea = new JScrollPane(courseList);
+        courseListArea.setBounds(10, 140, 770, 300);
+
+
         panel.add(courseListArea);
 
+        loadCourses();
         this.add(panel);
+    }
+
+    private void loadCourses(){
+        courseList.removeAll();
+        CourseService courseService = new CourseService();
+        Course[] courses = courseService.getAllCourses();
+        int y = 15;
+        for (Course c : courses) {
+            if (c == null) continue;
+            int x = 10;
+
+            JLabel codeLabel = new JLabel(c.getCode());
+            codeLabel.setBounds(x, y, 80, 25);
+            courseList.add(codeLabel);
+
+            x += 90;
+            JLabel nameLabel = new JLabel(c.getName());
+            nameLabel.setBounds(x, y, 140, 25);
+            courseList.add(nameLabel);
+
+            x += 150;
+            JLabel day1Label = new JLabel(c.getDay1() + " " + c.getStart1() + "-" + c.getEnd1());
+            day1Label.setBounds(x, y, 100, 25);
+            courseList.add(day1Label);
+
+            x += 110;
+            JLabel day2Label = new JLabel(c.getDay2() + " " + c.getStart2() + "-" + c.getEnd2());
+            day2Label.setBounds(x, y, 100, 25);
+            courseList.add(day2Label);
+
+            x += 110;
+            JLabel capacityLabel = new JLabel(String.valueOf(c.getCapacity()));
+            capacityLabel.setBounds(x, y, 70, 25);
+            courseList.add(capacityLabel);
+
+            x += 80;
+            JLabel countLabel = new JLabel(String.valueOf(c.getCount()));
+            countLabel.setBounds(x, y, 50, 25);
+            courseList.add(countLabel);
+
+            y += 35;
+        }
+
+        courseList.setPreferredSize(new Dimension(750, y));
+
+        courseListArea.revalidate();
+        courseListArea.repaint();
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -237,6 +289,7 @@ public class Courses extends JFrame implements ActionListener {
             boolean ok = courseService.addCourse(course);
             if (ok) {
                 JOptionPane.showMessageDialog(this, "Course added successfully!");
+                loadCourses();
             } else {
                 JOptionPane.showMessageDialog(this, "Failed to add course. Please try again.");
             }

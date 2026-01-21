@@ -48,6 +48,8 @@ public class Course {
     public String getSemester() { return semester; }
 
     public String toString() {
-        return code + "-" + section + " | " + name + " | " + day1 + " " + start1 + "-" + end1 + (day2.isEmpty()?"":"; " + day2 + " " + start2 + "-" + end2) + " | Sem: " + semester;
+        return code + "|" + name + "|" + day1 + "|" + start1 + "|" + end1 + "|" + 
+            day2 + "|" + start2 + "|" + end2 + "|" + section + "|" + 
+            capacity + "|" + count + "|" + status + "|" + semester;
     }
 }
